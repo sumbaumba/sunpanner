@@ -20,54 +20,29 @@ function SolarPanelSVG() {
         {/* Cell pattern: 12 cols × 11 rows = 132 cells */}
         <pattern id="cellPattern" x="0" y="0" width="43.5" height="25" patternUnits="userSpaceOnUse">
           <rect x="0" y="0" width="40" height="22" rx="1.5" fill="#0D2854" stroke="#1B3D7A" strokeWidth="0.6"/>
-          {/* Busbar lines */}
           <line x1="10" y1="0" x2="10" y2="22" stroke="#C8D6E8" strokeWidth="0.3" opacity="0.5"/>
           <line x1="20" y1="0" x2="20" y2="22" stroke="#C8D6E8" strokeWidth="0.3" opacity="0.5"/>
           <line x1="30" y1="0" x2="30" y2="22" stroke="#C8D6E8" strokeWidth="0.3" opacity="0.5"/>
           <line x1="0" y1="11" x2="40" y2="11" stroke="#C8D6E8" strokeWidth="0.4" opacity="0.3"/>
         </pattern>
-
-        {/* Glass reflection gradient */}
         <linearGradient id="glassGrad" x1="0" y1="0" x2="0.6" y2="1">
           <stop offset="0%" stopColor="white" stopOpacity="0.08"/>
           <stop offset="40%" stopColor="white" stopOpacity="0.02"/>
           <stop offset="100%" stopColor="white" stopOpacity="0"/>
         </linearGradient>
-
-        {/* Frame gradient */}
         <linearGradient id="frameGrad" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor="#D0D8E0"/>
           <stop offset="50%" stopColor="#A8B4C0"/>
           <stop offset="100%" stopColor="#8896A4"/>
         </linearGradient>
-
-        {/* Orange glow filter */}
-        <filter id="orangeGlow" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="6" result="blur"/>
-          <feMerge>
-            <feMergeNode in="blur"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-        </filter>
-
         <clipPath id="panelClip">
           <rect x="12" y="12" width="556" height="296" rx="4"/>
         </clipPath>
       </defs>
-
-      {/* Outer shadow */}
       <rect x="18" y="18" width="556" height="296" rx="8" fill="#000" opacity="0.4"/>
-
-      {/* Frame */}
       <rect x="8" y="8" width="564" height="304" rx="8" fill="url(#frameGrad)"/>
-
-      {/* Inner frame edge (darker) */}
       <rect x="12" y="12" width="556" height="296" rx="5" fill="#050E1E"/>
-
-      {/* Solar cells */}
       <rect x="20" y="18" width="540" height="284" fill="url(#cellPattern)" clipPath="url(#panelClip)"/>
-
-      {/* Horizontal busbars between rows */}
       <line x1="20" y1="43" x2="560" y2="43" stroke="#9AAEC4" strokeWidth="1" opacity="0.35"/>
       <line x1="20" y1="68" x2="560" y2="68" stroke="#9AAEC4" strokeWidth="1" opacity="0.35"/>
       <line x1="20" y1="93" x2="560" y2="93" stroke="#9AAEC4" strokeWidth="1" opacity="0.35"/>
@@ -79,24 +54,14 @@ function SolarPanelSVG() {
       <line x1="20" y1="243" x2="560" y2="243" stroke="#9AAEC4" strokeWidth="1" opacity="0.35"/>
       <line x1="20" y1="268" x2="560" y2="268" stroke="#9AAEC4" strokeWidth="1" opacity="0.35"/>
       <line x1="20" y1="293" x2="560" y2="293" stroke="#9AAEC4" strokeWidth="1" opacity="0.35"/>
-
-      {/* Glass reflection */}
       <rect x="12" y="12" width="556" height="296" rx="5" fill="url(#glassGrad)"/>
-
-      {/* Junction boxes at bottom */}
       <rect x="190" y="285" width="45" height="18" rx="3" fill="#1A2A3A" stroke="#2A4A6A" strokeWidth="0.8"/>
       <rect x="267" y="285" width="45" height="18" rx="3" fill="#1A2A3A" stroke="#2A4A6A" strokeWidth="0.8"/>
       <rect x="344" y="285" width="45" height="18" rx="3" fill="#1A2A3A" stroke="#2A4A6A" strokeWidth="0.8"/>
-
-      {/* Orange accent bar at bottom of frame */}
       <rect x="8" y="305" width="564" height="7" rx="0 0 8 8" fill="#F97316" opacity="0.85"/>
-
-      {/* Spec label */}
       <rect x="440" y="22" width="110" height="34" rx="3" fill="#F97316" opacity="0.9"/>
       <text x="495" y="34" textAnchor="middle" fill="white" fontSize="8" fontWeight="700" fontFamily="Arial">JGDN132-720</text>
       <text x="495" y="48" textAnchor="middle" fill="white" fontSize="11" fontWeight="900" fontFamily="Arial">720W HJT</text>
-
-      {/* EF Global logo area */}
       <text x="30" y="36" fill="#6A8AAA" fontSize="9" fontWeight="600" fontFamily="Arial" opacity="0.7">EF GLOBAL KOREA</text>
     </svg>
   );

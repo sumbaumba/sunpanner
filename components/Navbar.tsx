@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -21,28 +22,22 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#060D18]/95 backdrop-blur-md border-b border-[#1E3F6F]"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? "bg-[#060D18]/95 backdrop-blur-md border-b border-[#1E3F6F]"
+        : "bg-transparent"
+        }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3">
-          <div className="w-9 h-9 bg-[#F97316] rounded-lg flex items-center justify-center flex-shrink-0">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M10 2L12.5 7.5H18L13.5 11L15.5 17L10 13.5L4.5 17L6.5 11L2 7.5H7.5L10 2Z" fill="white"/>
-            </svg>
-          </div>
-          <div className="hidden sm:block">
-            <div className="text-white font-bold text-sm leading-tight tracking-tight">
-              이에프글로벌코리아
-            </div>
-            <div className="text-[#F97316] text-xs font-medium">
-              HJT 720W 솔루션
-            </div>
-          </div>
+        <a href="#" className="flex items-center">
+          <Image
+            src="/white-logo.png"
+            alt="Golden Solar × 이에프글로벌코리아"
+            width={560}
+            height={112}
+            className="h-50 w-auto object-contain"
+            priority
+          />
         </a>
 
         {/* Desktop Nav */}
@@ -61,7 +56,7 @@ export default function Navbar() {
         {/* CTA */}
         <a
           href="#contact"
-          className="hidden md:inline-flex btn-primary px-5 py-2.5 rounded-lg text-sm"
+          className="hidden md:inline-flex items-center justify-center btn-primary px-5 py-2.5 rounded-lg text-sm"
         >
           단가 문의하기
         </a>
@@ -74,12 +69,12 @@ export default function Navbar() {
         >
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
             {menuOpen ? (
-              <path d="M5 5L17 17M5 17L17 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              <path d="M5 5L17 17M5 17L17 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             ) : (
               <>
-                <path d="M3 6H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                <path d="M3 11H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                <path d="M3 16H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                <path d="M3 6H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                <path d="M3 11H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                <path d="M3 16H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
               </>
             )}
           </svg>

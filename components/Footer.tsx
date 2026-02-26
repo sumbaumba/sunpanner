@@ -1,20 +1,22 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="py-12 border-t border-[#1E3F6F]" style={{ background: "#060D18" }}>
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10 items-start">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-9 h-9 bg-[#F97316] rounded-lg flex items-center justify-center">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M10 2L12.5 7.5H18L13.5 11L15.5 17L10 13.5L4.5 17L6.5 11L2 7.5H7.5L10 2Z" fill="white"/>
-                </svg>
-              </div>
-              <div>
-                <div className="text-white font-bold text-sm">주식회사 이에프글로벌코리아</div>
-                <div className="text-[#F97316] text-xs">Golden Solar 공식 한국 수입사</div>
-              </div>
+            {/* 이미지 여백 크롭: 컨테이너로 위아래 여백 제거 */}
+            <div className="mb-3 overflow-hidden" style={{ height: "52px" }}>
+              <Image
+                src="/white-logo.png"
+                alt="Golden Solar × 이에프글로벌코리아"
+                width={800}
+                height={816}
+                className="w-auto object-left-top object-contain"
+                style={{ height: "220px", marginTop: "-82px" }}
+              />
             </div>
             <p className="text-[#5A7090] text-sm leading-relaxed mb-4 max-w-sm">
               대한민국 유일의 HJT 720W 공급사.
@@ -24,8 +26,8 @@ export default function Footer() {
             <div className="text-[#5A7090] text-xs leading-relaxed space-y-1">
               <div>📍 서울 사무소: 경기도 고양시 덕양구 향동로 217</div>
               <div>📍 구리 본사: 경기도 구리시 건원대로 51, 3105호</div>
-              <div>📞 1833-7155 · 📠 02-3447-1233</div>
-              <div>✉️ ef@ef-global.co.kr</div>
+              <div>📞 010-5630-8344</div>
+              <div>✉️ efglobalkorea@gmail.com</div>
             </div>
           </div>
 

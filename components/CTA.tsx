@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import emailjs from "@emailjs/browser";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -50,13 +51,27 @@ export default function CTA() {
     return () => ctx.revert();
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate form submission
-    await new Promise((res) => setTimeout(res, 1200));
-    setLoading(false);
-    setSubmitted(true);
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          from_name: formData.name,
+          from_phone: formData.phone,
+          region: formData.region,
+          message: formData.message || "상담 내용 없음",
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+      setSubmitted(true);
+    } catch {
+      alert("전송 중 오류가 발생했습니다. 직접 전화(010-5630-8344)로 문의해 주세요.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -117,13 +132,13 @@ export default function CTA() {
                 <div className="flex items-center gap-3">
                   <span className="text-[#F97316] text-base">📞</span>
                   <div>
-                    <div className="text-white text-sm font-bold">1833-7155</div>
+                    <div className="text-white text-sm font-bold">010-5630-8344</div>
                     <div className="text-[#5A7090] text-xs">평일 09:00~18:00</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-[#F97316] text-base">✉️</span>
-                  <span className="text-white text-sm">ef@ef-global.co.kr</span>
+                  <span className="text-white text-sm">efglobalkorea@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-[#F97316] text-base">📍</span>
