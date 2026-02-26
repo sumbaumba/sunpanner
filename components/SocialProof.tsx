@@ -130,30 +130,30 @@ export default function SocialProof() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Company Timeline */}
-          <div className="bg-[#0D2044] rounded-2xl border border-[#1E3F6F] p-8">
-            <h3 className="text-white font-bold text-xl mb-8 flex items-center gap-2">
+          <div className="bg-[#0D2044] rounded-2xl border border-[#1E3F6F] p-5 sm:p-8">
+            <h3 className="text-white font-bold text-xl mb-6 flex items-center gap-2">
               <span className="w-1.5 h-5 bg-[#F97316] rounded-full inline-block" />
               주요 연혁
             </h3>
             <div className="relative">
-              {/* Vertical line */}
-              <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-[#F97316] to-[#1E3F6F]" />
+              {/* Vertical line — left-5 = 20px, matches center of 40px dot column */}
+              <div className="absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-[#F97316] to-[#1E3F6F]" />
 
-              <div className="space-y-6">
+              <div className="space-y-5">
                 {timeline.map((item, i) => (
                   <div
                     key={i}
-                    className="timeline-item flex items-start gap-6"
+                    className="timeline-item flex items-start gap-4"
                     style={{ opacity: 0 }}
                   >
-                    {/* Year dot */}
-                    <div className="relative flex-shrink-0 flex flex-col items-center" style={{ width: "64px" }}>
+                    {/* Year dot — 40px wide, dot centered at 20px */}
+                    <div className="relative flex-shrink-0 flex flex-col items-center" style={{ width: "40px" }}>
                       <div
-                        className="w-4 h-4 rounded-full border-2 z-10"
+                        className="w-3.5 h-3.5 rounded-full border-2 z-10"
                         style={{ background: item.color, borderColor: item.color, boxShadow: `0 0 8px ${item.color}60` }}
                       />
                       <div
-                        className="text-xs font-bold mt-1"
+                        className="text-[10px] font-bold mt-1 text-center leading-tight"
                         style={{ color: item.color }}
                       >
                         {item.year}
@@ -161,11 +161,11 @@ export default function SocialProof() {
                     </div>
 
                     {/* Content */}
-                    <div className="flex-1 pb-2">
-                      <div className="flex items-center gap-2 mb-1">
+                    <div className="flex-1 pb-2 min-w-0">
+                      <div className="flex flex-wrap items-center gap-1.5 mb-1">
                         <span className="text-white font-semibold text-sm">{item.event}</span>
                         <span
-                          className="text-xs font-bold px-2 py-0.5 rounded-full"
+                          className="text-xs font-bold px-2 py-0.5 rounded-full flex-shrink-0"
                           style={{ background: `${item.color}20`, color: item.color }}
                         >
                           {item.highlight}

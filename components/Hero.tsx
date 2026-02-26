@@ -243,8 +243,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+      {/* Scroll indicator - PC only */}
+      <div className="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 opacity-50">
         <span className="text-[#94A9C7] text-xs">스크롤하여 확인</span>
         <div className="w-5 h-8 border border-[#94A9C7] rounded-full flex justify-center pt-1.5">
           <div

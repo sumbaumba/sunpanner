@@ -19,7 +19,7 @@ export default function FloatingCTA() {
     >
       <a
         href="#contact"
-        className="flex items-center justify-center gap-2 btn-primary px-8 py-3.5 rounded-full text-sm font-bold shadow-2xl"
+        className="flex items-center justify-center gap-2 btn-primary px-6 py-3.5 rounded-full text-sm font-bold shadow-2xl whitespace-nowrap"
         style={{ boxShadow: "0 8px 32px rgba(249, 115, 22, 0.5)" }}
       >
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
