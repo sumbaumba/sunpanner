@@ -148,7 +148,7 @@ export default function Technology() {
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <div className="section-label mb-3">JGDN132-720 · HJT 양면 모듈</div>
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-4">
             압도적인 기술 스펙
