@@ -177,27 +177,27 @@ export default function Hero() {
             </p>
 
             {/* Hero Stats */}
-            <div className="grid grid-cols-3 gap-4 mb-10">
-              <div className="bg-[#0D2044]/80 border border-[#1E3F6F] rounded-xl p-4 text-center">
-                <div className="text-3xl font-black text-[#F97316]">
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-10">
+              <div className="bg-[#0D2044]/80 border border-[#1E3F6F] rounded-xl p-2.5 sm:p-4 text-center">
+                <div className="text-xl sm:text-3xl font-black text-[#F97316]">
                   <span ref={stat1Ref}>0</span>
-                  <span className="text-lg">W</span>
+                  <span className="text-sm sm:text-lg">W</span>
                 </div>
-                <div className="text-[#94A9C7] text-xs mt-1 font-medium">최대 출력</div>
+                <div className="text-[#94A9C7] text-[10px] sm:text-xs mt-1 font-medium">최대 출력</div>
               </div>
-              <div className="bg-[#0D2044]/80 border border-[#1E3F6F] rounded-xl p-4 text-center">
-                <div className="text-3xl font-black text-[#F97316]">
+              <div className="bg-[#0D2044]/80 border border-[#1E3F6F] rounded-xl p-2.5 sm:p-4 text-center">
+                <div className="text-xl sm:text-3xl font-black text-[#F97316]">
                   <span ref={stat2Ref}>0</span>
-                  <span className="text-lg">%</span>
+                  <span className="text-sm sm:text-lg">%</span>
                 </div>
-                <div className="text-[#94A9C7] text-xs mt-1 font-medium">모듈 효율</div>
+                <div className="text-[#94A9C7] text-[10px] sm:text-xs mt-1 font-medium">모듈 효율</div>
               </div>
-              <div className="bg-[#0D2044]/80 border border-[#1E3F6F] rounded-xl p-4 text-center">
-                <div className="text-3xl font-black text-[#F97316]">
+              <div className="bg-[#0D2044]/80 border border-[#1E3F6F] rounded-xl p-2.5 sm:p-4 text-center">
+                <div className="text-xl sm:text-3xl font-black text-[#F97316]">
                   <span ref={stat3Ref}>0</span>
-                  <span className="text-lg">%</span>
+                  <span className="text-sm sm:text-lg">%</span>
                 </div>
-                <div className="text-[#94A9C7] text-xs mt-1 font-medium">30년 보장</div>
+                <div className="text-[#94A9C7] text-[10px] sm:text-xs mt-1 font-medium">30년 보장</div>
               </div>
             </div>
 
