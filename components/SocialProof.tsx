@@ -135,47 +135,47 @@ export default function SocialProof() {
               <span className="w-1.5 h-5 bg-[#F97316] rounded-full inline-block" />
               주요 연혁
             </h3>
-            <div className="relative">
-              {/* Vertical line — left-5 = 20px, matches center of 40px dot column */}
-              <div className="absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-[#F97316] to-[#1E3F6F]" />
-
-              <div className="space-y-5">
-                {timeline.map((item, i) => (
-                  <div
-                    key={i}
-                    className="timeline-item flex items-start gap-4"
-                    style={{ opacity: 0 }}
-                  >
-                    {/* Year dot — 40px wide, dot centered at 20px */}
-                    <div className="relative flex-shrink-0 flex flex-col items-center" style={{ width: "40px" }}>
+            <div className="flex flex-col">
+              {timeline.map((item, i) => (
+                <div
+                  key={i}
+                  className="timeline-item flex items-stretch gap-3"
+                  style={{ opacity: 0 }}
+                >
+                  {/* Left: dot + connecting line (only between items, stops after last) */}
+                  <div className="flex-shrink-0 flex flex-col items-center" style={{ width: "18px" }}>
+                    <div
+                      className="w-3 h-3 rounded-full border-2 z-10 flex-shrink-0 mt-1"
+                      style={{ background: item.color, borderColor: item.color, boxShadow: `0 0 8px ${item.color}60` }}
+                    />
+                    {i < timeline.length - 1 && (
                       <div
-                        className="w-3.5 h-3.5 rounded-full border-2 z-10"
-                        style={{ background: item.color, borderColor: item.color, boxShadow: `0 0 8px ${item.color}60` }}
+                        className="w-px flex-1 mt-1.5"
+                        style={{ background: `linear-gradient(to bottom, ${item.color}70, ${item.color}20)`, minHeight: "28px" }}
                       />
-                      <div
-                        className="text-[10px] font-bold mt-1 text-center leading-tight"
-                        style={{ color: item.color }}
-                      >
-                        {item.year}
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="flex-1 pb-2 min-w-0">
-                      <div className="flex flex-wrap items-center gap-1.5 mb-1">
-                        <span className="text-white font-semibold text-sm">{item.event}</span>
-                        <span
-                          className="text-xs font-bold px-2 py-0.5 rounded-full flex-shrink-0"
-                          style={{ background: `${item.color}20`, color: item.color }}
-                        >
-                          {item.highlight}
-                        </span>
-                      </div>
-                      <p className="text-[#5A7090] text-xs leading-relaxed">{item.detail}</p>
-                    </div>
+                    )}
                   </div>
-                ))}
-              </div>
+
+                  {/* Content */}
+                  <div className="flex-1 min-w-0 pb-5">
+                    <div className="flex flex-wrap items-center gap-1.5 mb-1">
+                      <span className="text-white font-semibold text-sm">{item.event}</span>
+                      <span
+                        className="text-xs font-bold px-2 py-0.5 rounded-full flex-shrink-0"
+                        style={{ background: `${item.color}20`, color: item.color }}
+                      >
+                        {item.highlight}
+                      </span>
+                    </div>
+                    <p className="text-[#5A7090] text-xs leading-relaxed">{item.detail}</p>
+                  </div>
+
+                  {/* Right: Year */}
+                  <div className="flex-shrink-0 pt-1">
+                    <span className="text-[11px] font-bold tabular-nums" style={{ color: item.color }}>{item.year}</span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 

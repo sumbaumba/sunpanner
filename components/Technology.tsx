@@ -239,7 +239,7 @@ export default function Technology() {
 
         {/* Detailed Specs Table */}
         <div className="bg-[#0D2044] rounded-2xl border border-[#1E3F6F] overflow-hidden">
-          <div className="px-8 py-5 border-b border-[#1E3F6F] flex items-center justify-between">
+          <div className="px-8 py-5 border-b border-[#1E3F6F] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
             <h3 className="text-white font-bold text-lg">전기적 사양 (STC 기준)</h3>
             <span className="text-[#5A7090] text-xs">일사량 1000W/㎡ · 셀 온도 25°C · AM 1.5</span>
           </div>

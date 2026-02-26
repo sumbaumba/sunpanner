@@ -174,11 +174,11 @@ export default function Warranty() {
             </div>
           </div>
 
-          <div className="overflow-x-auto">
+          <div>
             <svg
               ref={chartRef}
               viewBox="0 0 620 270"
-              className="w-full min-w-[360px]"
+              className="w-full"
               style={{ overflow: "visible" }}
             >
               <defs>
