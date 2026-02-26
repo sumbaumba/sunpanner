@@ -156,7 +156,7 @@ export default function Technology() {
           <p className="text-[#94A9C7] text-lg max-w-2xl mx-auto">
             210mm 웨이퍼 기반 N형 양면 HJT 하프컷 셀.
             <br />
-            숫자가 증명하는 대한민국 최고 효율 태양광 모듈.
+            숫자가 증명하는 대한민국 최고 효율<br />태양광 모듈.
           </p>
         </div>
 
