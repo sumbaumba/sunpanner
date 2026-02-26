@@ -8,14 +8,14 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             {/* 이미지 여백 크롭: 컨테이너로 위아래 여백 제거 */}
-            <div className="mb-3 overflow-hidden" style={{ height: "52px" }}>
+            <div className="mb-3 overflow-hidden" style={{ height: "70px" }}>
               <Image
                 src="/white-logo.png"
                 alt="Golden Solar × 이에프글로벌코리아"
                 width={800}
                 height={816}
                 className="w-auto object-left-top object-contain"
-                style={{ height: "220px", marginTop: "-82px" }}
+                style={{ height: "220px", marginTop: "-75px" }}
               />
             </div>
             <p className="text-[#5A7090] text-sm leading-relaxed mb-4 max-w-sm">

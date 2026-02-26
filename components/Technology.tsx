@@ -161,27 +161,27 @@ export default function Technology() {
         </div>
 
         {/* Main 3 Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-3 gap-2 sm:gap-6 mb-12">
           {mainSpecs.map((spec, i) => (
             <div
               key={i}
-              className="tech-card tech-main-card bg-[#0D2044] rounded-2xl p-8 text-center"
+              className="tech-card tech-main-card bg-[#0D2044] rounded-xl sm:rounded-2xl p-3 sm:p-8 text-center"
               style={{ opacity: 0 }}
             >
-              <div className="flex justify-center mb-4">{spec.icon}</div>
-              <div className="flex items-end justify-center gap-1 mb-2">
+              <div className="hidden sm:flex justify-center mb-4">{spec.icon}</div>
+              <div className="flex items-end justify-center gap-0.5 mb-1 sm:mb-2">
                 <span
-                  className="text-6xl font-black text-[#F97316] leading-none"
+                  className="text-3xl sm:text-6xl font-black text-[#F97316] leading-none"
                   ref={(el) => {
                     counterRefs.current[i] = el;
                   }}
                 >
                   0
                 </span>
-                <span className="text-3xl font-bold text-[#F97316] mb-1">{spec.unit}</span>
+                <span className="text-lg sm:text-3xl font-bold text-[#F97316] mb-0.5 sm:mb-1">{spec.unit}</span>
               </div>
-              <div className="text-white font-bold text-lg mb-1">{spec.label}</div>
-              <div className="text-[#5A7090] text-sm">{spec.sub}</div>
+              <div className="text-white font-bold text-[11px] sm:text-lg mb-0.5 sm:mb-1 leading-tight">{spec.label}</div>
+              <div className="text-[#5A7090] text-[10px] sm:text-sm hidden sm:block">{spec.sub}</div>
             </div>
           ))}
         </div>
