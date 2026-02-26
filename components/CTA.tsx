@@ -91,7 +91,7 @@ export default function CTA() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left: Copy */}
-          <div className="cta-content" style={{ opacity: 0 }}>
+          <div className="cta-content order-2 lg:order-1" style={{ opacity: 0 }}>
             <div className="section-label mb-4">전문 기술 상담</div>
             <h2 className="text-4xl sm:text-5xl font-black text-white leading-tight mb-6">
               귀사의 현장에
@@ -152,7 +152,7 @@ export default function CTA() {
           </div>
 
           {/* Right: Form */}
-          <div className="cta-content" style={{ opacity: 0 }}>
+          <div className="cta-content order-1 lg:order-2" style={{ opacity: 0 }}>
             <div className="bg-[#060D18] border border-[#1E3F6F] rounded-2xl p-8">
               {submitted ? (
                 <div className="text-center py-12">
